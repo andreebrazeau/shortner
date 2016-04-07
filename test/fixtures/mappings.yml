@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url_hash: oCPPv18
+  long_url: https://facebook.com
+
+two:
+  url_hash: Pganic9
+  long_url: https://www.twitter.com

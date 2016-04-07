@@ -1,0 +1,28 @@
+<h1>New url Mapping</h1>
+
+<% if @mapping.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@mapping.errors.count, "error") %> prohibited
+        this mapping from being saved:
+      </h2>
+      <ul>
+        <% @mapping.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_for :url_mapping, url: url_mapping_index_path do |f| %> 
+  <p>
+    <%= f.label :long_url %><br>
+    <%= f.text_field :long_url %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', url_mapping_index_path %>

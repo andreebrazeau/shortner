@@ -1,0 +1,20 @@
+<h1>Listing Urls</h1>
+ 
+<%= link_to 'New Short Url', new_url_mapping_path %>
+<table>
+  <tr>
+    <th>Hash</th>
+    <th>Url</th>
+    <th colspan="1"></th>
+  </tr>
+ 
+  <% @mappings.each do |mapping| %>
+    <tr>
+      <td><%= mapping.url_hash %></td>
+      <td><%= mapping.long_url %></td>
+	  <td><%= link_to 'Destroy', url_mapping_path(mapping),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
