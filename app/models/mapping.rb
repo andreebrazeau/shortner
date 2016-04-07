@@ -15,8 +15,6 @@ class Mapping < ActiveRecord::Base
 		rescue URI::Error => e
 			errors.add(:long_url, "not a valid url")
 		end
-
-
 	end
 
 	def get_short

@@ -14,7 +14,7 @@ class UrlMappingController < ApplicationController
 
     def create
         @mapping = Mapping.new(mapping_params)
-        
+
         if @mapping.save
             redirect_to url_mapping_path(@mapping)
         else
@@ -27,6 +27,12 @@ class UrlMappingController < ApplicationController
         @mapping.destroy
 
         redirect_to url_mapping_index_path
+    end
+
+    def goto
+        @mapping = Mapping.find_by(url_hash: params[:url_hash])
+
+        redirect_to @mapping.long_url
     end
 
     private

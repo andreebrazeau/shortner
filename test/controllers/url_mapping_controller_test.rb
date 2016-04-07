@@ -40,4 +40,9 @@ class UrlMappingControllerTest < ActionController::TestCase
 	  	end
 	  	assert_redirected_to url_mapping_index_path
 	end
+
+	test "should goto longurl" do
+		get :goto, url_hash: @mapping.url_hash
+		assert_redirected_to @mapping.long_url
+	end
 end

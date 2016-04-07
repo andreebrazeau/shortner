@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :url_mapping
+  resources :url_mapping #, :path => ''
 
   root 'url_mapping#new'
 
+  get ':url_hash' => 'url_mapping#goto', :as => :goto
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
