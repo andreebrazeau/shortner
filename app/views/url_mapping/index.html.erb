@@ -4,14 +4,16 @@
 <table>
   <tr>
     <th>Hash</th>
-    <th>Url</th>
-    <th colspan="1"></th>
+    <th>Long Url</th>
+    <th colspan="2"></th>
   </tr>
  
   <% @mappings.each do |mapping| %>
     <tr>
       <td><%= mapping.url_hash %></td>
       <td><%= mapping.long_url %></td>
+	  <td><%= link_to 'Show', url_mapping_path(mapping),
+              method: :get %></td>
 	  <td><%= link_to 'Destroy', url_mapping_path(mapping),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
