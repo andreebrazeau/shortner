@@ -20,11 +20,13 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: shortner
-  password: shortner
+  username: postgres
+  password: 
+  host: db
 
 
-development:
+
+development: 
   <<: *default
   database: shortner_development
 
