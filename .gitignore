@@ -16,3 +16,4 @@
 !/log/.keep
 /tmp
 .secret
+.DS_Store

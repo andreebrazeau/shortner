@@ -29,6 +29,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 gem 'unicorn'
 
+# bunble for React JS
+gem 'react-rails', '~> 1.6.0'
+
+# bundle for boodstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

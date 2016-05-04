@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :url_mapping #, :path => ''
 
-  root 'url_mapping#new'
+  root 'url_mapping#index'
 
   get ':url_hash' => 'url_mapping#goto', :as => :goto
   # The priority is based upon order of creation: first created -> highest priority.
