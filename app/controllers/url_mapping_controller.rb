@@ -4,29 +4,20 @@ class UrlMappingController < ApplicationController
         @mappings = Mapping.all
     end
 
-    def show
-        @mapping = Mapping.find(params[:id])
-    end
-
-    def new
-        @mapping = Mapping.new
-    end
-
     def create
         @mapping = Mapping.new(mapping_params)
 
         if @mapping.save
-            redirect_to url_mapping_path(@mapping)
+            render json: @mapping
         else
-            render 'new'
+            render json: @mapping.errors, status: :unprocessable_entity
         end
     end
 
     def destroy
         @mapping = Mapping.find(params[:id])
         @mapping.destroy
-
-        redirect_to url_mapping_index_path
+        head :no_content
     end
 
     def goto
